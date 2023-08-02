@@ -28,7 +28,7 @@ export class AuthService {
 
     if (candidate) {
       throw new HttpException(
-        'User with this email has already exist',
+        'User with this email already exist',
         HttpStatus.BAD_REQUEST,
       );
     }
