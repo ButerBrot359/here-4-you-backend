@@ -24,14 +24,12 @@ export class RolesGuard implements CanActivate {
         [context.getHandler(), context.getClass()],
       );
 
-      console.log('qweqweqe', requriedRoles);
-
       if (!requriedRoles) {
         return true;
       }
 
       const req = context.switchToHttp().getRequest();
-      const authHeaders = req.headers.auth;
+      const authHeaders = req.headers.authorization;
 
       const [bearer, token] = authHeaders.split(' ');
 
